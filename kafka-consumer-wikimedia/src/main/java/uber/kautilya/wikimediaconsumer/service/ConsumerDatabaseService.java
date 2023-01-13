@@ -1,4 +1,4 @@
-package uber.kautilya.wikimediaconsumer;
+package uber.kautilya.wikimediaconsumer.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

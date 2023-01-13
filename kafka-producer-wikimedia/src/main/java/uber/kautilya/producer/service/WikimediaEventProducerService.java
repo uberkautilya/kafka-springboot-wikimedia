@@ -1,4 +1,4 @@
-package uber.kautilya.producer;
+package uber.kautilya.producer.service;
 
 
 import com.launchdarkly.eventsource.EventHandler;
@@ -13,8 +13,8 @@ import java.net.URI;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class WikimediaEventProducer {
-    private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaEventProducer.class);
+public class WikimediaEventProducerService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaEventProducerService.class);
     private KafkaTemplate<String, String> kafkaTemplate;
 
     /**
@@ -23,7 +23,7 @@ public class WikimediaEventProducer {
      *
      * @param kafkaTemplate - spring auto-injects it as it is the only constructor
      */
-    public WikimediaEventProducer(KafkaTemplate<String, String> kafkaTemplate) {
+    public WikimediaEventProducerService(KafkaTemplate<String, String> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
 
