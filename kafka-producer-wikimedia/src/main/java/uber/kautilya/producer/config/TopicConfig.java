@@ -1,4 +1,4 @@
-package uber.kautilya.config;
+package uber.kautilya.producer.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;

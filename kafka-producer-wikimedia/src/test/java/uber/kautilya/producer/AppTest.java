@@ -1,4 +1,4 @@
-package uber.kautilya;
+package uber.kautilya.producer;
 
 /**
  * Unit test for simple App.
