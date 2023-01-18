@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>uber.kautilya</groupId>
-        <artifactId>kafka-project</artifactId>
+        <artifactId>kafka-realworld-project</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>kafka-consumer-wikimedia</artifactId>

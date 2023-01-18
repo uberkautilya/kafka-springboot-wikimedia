@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>uber.kautilya</groupId>
-    <artifactId>kafka-project</artifactId>
+    <artifactId>kafka-realworld-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>kafka-project</name>
