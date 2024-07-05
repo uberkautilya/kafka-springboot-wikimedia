@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class WikimediaEventProducerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaEventProducerService.class);
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     /**
      * Needn't autowire the kafkaTemplate as this class which is a @Service component has only one constructor, which is parameterized

@@ -9,7 +9,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 public class WikimediaEventHandler implements EventHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(WikimediaEventHandler.class);
     KafkaTemplate<String, String> kafkaTemplate;
-    private String topic;
+    private final String topic;
 
     public WikimediaEventHandler(KafkaTemplate<String, String> kafkaTemplate, String topic) {
         this.kafkaTemplate = kafkaTemplate;
@@ -28,7 +28,7 @@ public class WikimediaEventHandler implements EventHandler {
 
     @Override
     public void onMessage(String s, MessageEvent messageEvent) throws Exception {
-        LOGGER.info("Event from Wikimedia: " + messageEvent.getData());
+        LOGGER.info("Event from Wikimedia: {}", messageEvent.getData());
         kafkaTemplate.send(topic, messageEvent.getData());
     }
 
