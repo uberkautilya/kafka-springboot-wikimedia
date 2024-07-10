@@ -30,9 +30,9 @@ public class WikimediaEventProducerService {
     public void sendMessage() throws InterruptedException {
         //Read from an event source - here wikimedia stream
         EventHandler eventHandler = new WikimediaEventHandler(kafkaTemplate, "wikimedia_events");
+        URI uri = URI.create("https://stream.wikimedia.org/v2/stream/recentchange");
 
-        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
-        EventSource.Builder eventSourceBuilder = new EventSource.Builder(eventHandler, URI.create(url));
+        EventSource.Builder eventSourceBuilder = new EventSource.Builder(eventHandler, uri);
 
         try (EventSource eventSource = eventSourceBuilder.build()) {
             eventSource.start();

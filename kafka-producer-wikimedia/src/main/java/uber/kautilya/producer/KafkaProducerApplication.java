@@ -10,6 +10,7 @@ import uber.kautilya.producer.service.WikimediaEventProducerService;
 public class KafkaProducerApplication implements CommandLineRunner {
     @Autowired
     private WikimediaEventProducerService eventProducerService;
+
     public static void main(String[] args) {
         SpringApplication.run(KafkaProducerApplication.class);
     }
