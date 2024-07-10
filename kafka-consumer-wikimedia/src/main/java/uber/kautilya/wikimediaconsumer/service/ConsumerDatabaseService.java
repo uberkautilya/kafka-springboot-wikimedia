@@ -10,7 +10,7 @@ import uber.kautilya.wikimediaconsumer.repository.WikimediaRepository;
 @Service
 public class ConsumerDatabaseService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ConsumerDatabaseService.class);
-    private WikimediaRepository wikimediaRepository;
+    private final WikimediaRepository wikimediaRepository;
 
     public ConsumerDatabaseService(WikimediaRepository wikimediaRepository) {
         this.wikimediaRepository = wikimediaRepository;

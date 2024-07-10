@@ -28,12 +28,15 @@ public class WikimediaEventProducerService {
     }
 
     public void sendMessage() throws InterruptedException {
-        String topic = "wikimedia_events";
-        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
         //Read from an event source - here wikimedia stream
-        EventHandler eventHandler = new WikimediaEventHandler(kafkaTemplate, topic);
-        EventSource eventSource = new EventSource.Builder(eventHandler, URI.create(url)).build();
-        eventSource.start();
+        EventHandler eventHandler = new WikimediaEventHandler(kafkaTemplate, "wikimedia_events");
+
+        String url = "https://stream.wikimedia.org/v2/stream/recentchange";
+        EventSource.Builder eventSourceBuilder = new EventSource.Builder(eventHandler, URI.create(url));
+
+        try (EventSource eventSource = eventSourceBuilder.build()) {
+            eventSource.start();
+        }
 
         TimeUnit.MINUTES.sleep(10);
     }
